@@ -1,0 +1,26 @@
+<div class="container" *ngIf="!accepted; else acceptedMessage">
+    <h1>¿Quieres ser mi San Valentín? 💖</h1>
+    
+    <div class="buttons">
+      <button class="yes-button" (click)="accept()">¡Sí!</button>
+      
+      <button class="no-button" 
+              (mouseenter)="moveNoButton()"
+              (click)="moveNoButton()"
+              [style.transform]="'translate(' + noButtonPosition.x + 'px, ' + noButtonPosition.y + 'px)'">
+        No
+      </button>
+    </div>
+  </div>
+  
+  <ng-template #acceptedMessage>
+    <div class="accepted">
+      <h1>¡Eres la mejor novia del mundo Mi Niña, Mariel Santivañez! 🌹</h1>
+      <p>Te amo más que a nada... 💞</p>
+      <div class="hearts">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+      </div>
+    </div>
+  </ng-template>
