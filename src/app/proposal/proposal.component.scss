@@ -3,6 +3,38 @@ $primary-color: #ff4081;
 $secondary-color: #f50057;
 $text-color: #ffffff;
 
+/* .background-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('assets/stars.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+
+.background-container {
+  /* Asegura que el contenedor ocupe toda la pantalla */
+  height: 100vh;
+  width: 100vw;
+
+  /* Aplica el fondo: el GIF y un degradado de color rosa-morado (opcional) */
+  background: 
+    url('/assets/stars.gif') center center/cover no-repeat,
+    linear-gradient(45deg, #ff66cc, #9933ff);
+  
+  /* Utiliza Flexbox para centrar el contenido vertical y horizontalmente */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Opcional: define color y estilos para que el texto sea legible */
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  padding: 20px;
+}
+
 /* Estilos generales (para pantallas grandes) */
 .container {
     padding: 20px;
@@ -91,7 +123,7 @@ button {
 }
 
 .accepted {
-  @extend .container;
+  @extend .background-container;
   animation: fadeIn 1s ease;
 
   h1 {
@@ -148,4 +180,46 @@ button {
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(-45deg); }
   50% { transform: translateY(-20px) rotate(-45deg); }
+}
+
+.code-container {
+  margin-top: 2rem;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  
+  p {
+    color: $text-color;
+    margin-bottom: 1rem;
+  }
+}
+
+.code-input {
+  padding: 12px;
+  font-size: 1.2em;
+  border: 2px solid $primary-color;
+  border-radius: 10px;
+  margin-right: 10px;
+  text-align: center;
+  width: 150px;
+}
+
+.verify-button {
+  @extend button;
+  background-color: $secondary-color;
+  padding: 12px 25px;
+}
+
+.error-message {
+  color: #ff1744;
+  margin-top: 1rem;
+  font-weight: bold;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
 }
