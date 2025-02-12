@@ -1,0 +1,225 @@
+// Variables de tema
+$primary-color: #ff4081;
+$secondary-color: #f50057;
+$text-color: #ffffff;
+
+/* .background-container {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('assets/stars.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+
+.background-container {
+  /* Asegura que el contenedor ocupe toda la pantalla */
+  height: 100vh;
+  width: 100vw;
+
+  /* Aplica el fondo: el GIF y un degradado de color rosa-morado (opcional) */
+  background: 
+    url('/assets/stars.gif') center center/cover no-repeat,
+    linear-gradient(45deg, #ff66cc, #9933ff);
+  
+  /* Utiliza Flexbox para centrar el contenido vertical y horizontalmente */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* Opcional: define color y estilos para que el texto sea legible */
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  padding: 20px;
+}
+
+/* Estilos generales (para pantallas grandes) */
+.container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 2rem;
+  }
+  
+  button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+  }
+  
+  /* Estilos para pantallas pequeñas (por ejemplo, menores a 768px) */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 2em;
+      margin-bottom: 1.5rem;
+    }
+  
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+    }
+    
+    .heart {
+      width: 40px;
+      height: 40px;
+    }
+  }  
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  padding: 20px;
+
+  h1 {
+    color: $text-color;
+    font-size: 2.5em;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+}
+
+.buttons {
+  position: relative;
+  display: flex;
+  gap: 20px;
+}
+
+button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.yes-button {
+  background-color: $primary-color;
+  color: white;
+}
+
+.no-button {
+  background-color: $secondary-color;
+  color: white;
+  position: absolute;
+  transition: all 0.5s ease;
+}
+
+.accepted {
+  @extend .background-container;
+  animation: fadeIn 1s ease;
+
+  h1 {
+    font-size: 3em;
+  }
+
+  p {
+    color: $text-color;
+    font-size: 1.5em;
+    margin: 20px 0;
+  }
+}
+
+.hearts {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.heart {
+  width: 50px;
+  height: 50px;
+  background-color: #ff4081;
+  position: relative;
+  transform: rotate(-45deg);
+  animation: float 2s infinite;
+
+  &::before, &::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: #ff4081;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  &::before {
+    top: -25px;
+    left: 0;
+  }
+
+  &::after {
+    left: 25px;
+    top: 0;
+  }
+}
+
+// Animaciones
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-45deg); }
+  50% { transform: translateY(-20px) rotate(-45deg); }
+}
+
+.code-container {
+  margin-top: 2rem;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  
+  p {
+    color: $text-color;
+    margin-bottom: 1rem;
+  }
+}
+
+.code-input {
+  padding: 12px;
+  font-size: 1.2em;
+  border: 2px solid $primary-color;
+  border-radius: 10px;
+  margin-right: 10px;
+  text-align: center;
+  width: 150px;
+}
+
+.verify-button {
+  @extend button;
+  background-color: $secondary-color;
+  padding: 12px 25px;
+}
+
+.error-message {
+  color: #ff1744;
+  margin-top: 1rem;
+  font-weight: bold;
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+}

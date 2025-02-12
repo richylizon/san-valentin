@@ -1,0 +1,40 @@
+<div class="background-container" *ngIf="!accepted; else acceptedMessage">
+  <h1>💖¿Quieres ser mi San Valentín? 💖</h1>
+  
+  <div class="buttons">
+    <button class="yes-button" (click)="accept()">¡Sí!</button>
+    
+    <button class="no-button"
+            (mouseenter)="moveNoButton()"
+            (click)="moveNoButton()"
+            [style.transform]="'translate(' + noButtonPosition.x + 'px, ' + noButtonPosition.y + 'px)'">
+      No
+    </button>
+  </div>
+
+  <div class="code-container" *ngIf="showCodeInput">
+    <p>Revisa WhatsApp y escribe el código aquí:</p>
+    <input type="text"
+           [(ngModel)]="enteredCode"
+           (keydown)="validateCode()"
+           placeholder="Código de verificación"
+           maxlength="6"
+           class="code-input">
+    <button class="verify-button" (click)="validateCode()">Validar</button>
+    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+  </div>
+</div>
+
+<ng-template #acceptedMessage>
+  <div class="accepted">
+    <h1>¡Eres la mejor novia del mundo</h1>
+    <h1> 💞Mi Niña Mariel Ximena Santivañez Lizarraga! 💞 </h1>
+    <p>Te amo más que a nada...🌹 </p>
+    <!-- <div class="hearts"> -->
+      <!-- <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div> -->
+      <img src="assets/JumpingHeart.gif" alt="Corazón Saltando">
+    </div>
+ <!--  </div> -->
+</ng-template>
