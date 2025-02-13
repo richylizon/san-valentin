@@ -29,7 +29,7 @@ export class ProposalComponent {
   } 
 
   sendWhatsAppCode() {
-    const phoneNumber = '59177449442'; // Reemplazar con tu número de teléfono
+    const phoneNumber = '59169532274'; // Reemplazar con tu número de teléfono
     //const message = `Hola Mi Niña! 🌹\nTu código de verificación es: ${this.verificationCode}`;
     const message = `Hola Mi Niña! 🌹\nTu código de verificación es: ${this.verificationCode}`;
     
