@@ -3,19 +3,9 @@ $primary-color: #ff4081;
 $secondary-color: #f50057;
 $text-color: #ffffff;
 
-/* .background-container {
-  height: 100vh;
-  width: 100vw;
-  background-image: url('assets/stars.gif');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-} */
-
-
 .background-container {
   /* Asegura que el contenedor ocupe toda la pantalla */
-  height: 100vh;
+  height: auto;
   width: 100vw;
 
   /* Aplica el fondo: el GIF y un degradado de color rosa-morado (opcional) */
@@ -92,7 +82,7 @@ $text-color: #ffffff;
 }
 
 .buttons {
-  position: relative;
+  position: absolute ;
   display: flex;
   gap: 20px;
 }
@@ -118,7 +108,7 @@ button {
 .no-button {
   background-color: $secondary-color;
   color: white;
-  position: absolute;
+  position: absolute ;
   transition: all 0.5s ease;
 }
 
@@ -147,7 +137,7 @@ button {
   width: 50px;
   height: 50px;
   background-color: #ff4081;
-  position: relative;
+  position: absolute ;
   transform: rotate(-45deg);
   animation: float 2s infinite;
 
@@ -222,4 +212,10 @@ button {
   25% { transform: translateX(-10px); }
   50% { transform: translateX(10px); }
   75% { transform: translateX(-10px); }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
